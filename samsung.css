@@ -1,0 +1,107 @@
+body{
+  margin: 0;
+}
+
+.hero {
+    color: white;
+    background-image: url("./images/samsunghero.webp");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px 50px 300px;
+}
+
+.navbar {
+  display : flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navleft {
+  display: flex;
+  align-items: center;
+  gap: 18px; 
+}
+
+.navright {
+  display: flex;
+  align-items: center;
+  gap: 18px; 
+}
+
+.navbar .col {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.headers {
+  text-align: left;
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.herotext{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 25%;
+}
+
+.herotext h1 {
+  margin: 0;
+  font-size: 50px;
+}
+
+.herotext button {
+  background-color:transparent;
+  color: white;
+
+  border: 2px solid white;
+  border-radius: 999px;
+
+  padding: 8px 20px;
+
+  font-size: 10px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  line-height:1;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.herotext button:hover {
+  background-color: white;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+
+.leftie{
+  display: flex;
+  justify-content: right;
+  margin: 8px;
+  align-items: center;
+  gap: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+
+.navright input{
+  background-color:transparent;
+  color: white;
+
+  border: 2px solid white;
+  border-radius: 999px;
+
+  padding: 8px 10px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height:1;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.navright input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
