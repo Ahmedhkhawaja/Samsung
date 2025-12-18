@@ -105,3 +105,87 @@ body{
 .navright input::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
+
+.phonehero{
+  position: relative;
+
+  background-image: url("./images/phone.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+  margin: 20px;
+  padding: 100px 50px 500px;
+}
+
+.insidebut{
+  background-color:transparent;
+  color: rgb(0, 0, 0);
+
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 999px;
+
+  padding: 8px 16px;
+
+  font-size: 10px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  line-height:1;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.278);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.insidebut:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+}
+
+.insides{
+  display : flex;
+  align-items: center;
+
+  top: 370px;     /* move up/down */
+  left: 45px;     /* move left/right */
+
+  position: absolute;
+
+  display: flex;
+  gap: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.insides a{
+  color: black;
+  font-size: 12px;
+}
+
+
+inside{
+  position: relative;
+  color: black;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.inside::after {
+  top: 24px;     /* move up/down */
+  left: 45px;     /* move left/right */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+
+  width: 0;
+  height: 2px;
+  background-color: black;
+
+  transition: width 0.3s ease;
+}
+
+.inside:hover::after {
+  width: 47%;
+}
