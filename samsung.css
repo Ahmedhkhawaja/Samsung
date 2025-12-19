@@ -300,3 +300,22 @@ inside{
 .main{
   margin-bottom: 100px;
 }
+
+.cardsa {
+  display: flex;
+}
+
+.cardsa img {
+  width: 150px;
+  height: 150px;
+}
+
+.cardsa .image {
+  display: flex;
+  align-items : center;
+  justify-content: center;
+}
+
+.cardsa .text {
+  margin: 5px;
+}
