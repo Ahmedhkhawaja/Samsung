@@ -263,59 +263,103 @@ inside{
 }
 
 /*//////////////////////////////////////////////////////*/
+/* Layout */
+.main {
+  margin-bottom: 500px;
+}
 
-.main .carousel{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.carousel-container {
+  width: 1070px;          /* viewport width (your choice) */
+  margin-left: 20px;
+  overflow: hidden;       /* hide extra cards */
+}
 
-  gap: 20px;
+.carousel {
   margin-bottom: 20px;
 }
-.card{
-  border: 2px solid rgb(0, 0, 0);
-  height: 250px;
-  width: 250px;
-}
 
-.main .buttons {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.main button {
-
-  border-radius: 999px;
-  gap: 10px;
-  margin: 0 10px;
-  height: 30px;
-  width: 30px;
-  border-color: transparent;
-  background-color: black;
-  color:aliceblue;
-}
-
-.main{
-  margin-bottom: 100px;
-}
-
+/* Track (the moving row) */
 .cardsa {
   display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  transition: transform 300ms ease;
+  will-change: transform;
 }
 
+/* Card */
+.card {
+  /* border: 2px solid #000; */
+  flex: 0 0 auto;         /* prevents shrinking */
+  overflow: hidden;
+}
+
+/* Card contents */
+.image{
+  width: 270px;
+  height: 270px;
+  overflow: hidden;
+    background-color: rgb(246, 246, 246);
+  border-radius: 5px;
+}
 .cardsa img {
-  width: 150px;
-  height: 150px;
-}
+  width: 200px;
+  height: 200px;
 
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease, padding 0.3s ease, overflow 0.3s ease;
+}
+.cardsa img:hover {
+  overflow: hidden;
+  transform: scale(1.1);
+  transition: transform 0.3s ease, padding 0.3s ease, overflow 0.3s ease;
+}
 .cardsa .image {
   display: flex;
-  align-items : center;
+  align-items: center;
   justify-content: center;
 }
 
 .cardsa .text {
   margin: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.buttons button {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: #000;
+  color: aliceblue;
+}
+
+
+/* Bar */
+.bard{
+  background-color: rgb(218, 218, 218);
+  height: 5px;
+  width: 500px;
+  margin-right: 50px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.mybar{
+  background-color: black;
+  height: 5px;
+  width: 0px;
+  transition: width 300ms ease;
 }

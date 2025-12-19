@@ -1,17 +1,71 @@
-const PrevBtn = document.querySelector(".Previous");
-const NextBtn = document.querySelector(".Next");
-let slideCount = 1;
-NextBtn.addEventListener("click", NextSlide);
-PrevBtn.addEventListener("click", PrevSlide);
+const prevBtn = document.querySelector(".Previous");
+const nextBtn = document.querySelector(".Next");
 
-function NextSlide() {
-  if (slideCount < 3) {
-    slideCount++;
-  }
+const track = document.querySelector("#cardsa");
+const container = document.querySelector(".carousel-container");
+
+
+const barFill = document.querySelector(".mybar");
+const barTrack = document.querySelector(".bard");
+
+function updateProgressBar() {
+  const max = maxIndex();
+  const trackWidth = barTrack.getBoundingClientRect().width;
+  const progress = max === 0 ? 1 : index /max;
+  barFill.style.width = `${progress * trackWidth}px`;
 }
 
-function PrevSlide() {
-  if (slideCount > 1) {
-    slideCount--;
-  }
+
+
+
+
+
+
+
+let index = 0;
+
+
+function stepSize() {
+  const firstCard = track.querySelector(".card");
+  if (!firstCard) return 0;
+
+  const cardWidth = firstCard.getBoundingClientRect().width;
+  const styles = getComputedStyle(track);
+  const gap = parseFloat(styles.gap || styles.columnGap || 0);
+
+  return cardWidth + gap;
 }
+
+function maxIndex() {
+  const totalCards = track.querySelectorAll(".card").length;
+  const containerWidth = container.getBoundingClientRect().width;
+  const step = stepSize();
+
+  const visibleCards = Math.floor(containerWidth / step);
+  return Math.max(0, totalCards - visibleCards);
+}
+
+function render() {
+  const step = stepSize();
+  track.style.transform = `translateX(${-index * step}px)`;
+  updateProgressBar();
+}
+
+nextBtn.addEventListener("click", () => {
+  index = Math.min(index + 1, maxIndex());
+  render();
+});
+
+prevBtn.addEventListener("click", () => {
+  index = Math.max(index - 1, 0);
+  render();
+});
+
+window.addEventListener("resize", render);
+render();
+
+
+
+
+
+
