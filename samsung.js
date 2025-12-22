@@ -69,3 +69,33 @@ render();
 
 
 
+
+
+
+const header = document.querySelector(".header");
+const mega = document.getElementById("mega");
+const triggers = document.querySelectorAll(".headers");
+
+let closeTimer = null;
+
+function openMenu() {
+  if (closeTimer) clearTimeout(closeTimer);
+  mega.classList.add("open");
+  header.classList.add("mega-open");
+}
+
+function closeMenu() {
+  if (closeTimer) clearTimeout(closeTimer);
+  closeTimer = setTimeout(() => {
+    mega.classList.remove("open");
+    header.classList.remove("mega-open");
+  }, 200);
+}
+
+triggers.forEach ((t) => {
+  t.addEventListener("mouseenter", openMenu);
+  t.addEventListener("mouseleave", closeMenu);
+});
+
+mega.addEventListener("mouseenter", openMenu);
+mega.addEventListener("mouseleave", closeMenu);

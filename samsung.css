@@ -1,49 +1,28 @@
-body{
+/* =========================
+   Base
+========================= */
+body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* =========================
+   HERO
+========================= */
 .hero {
-    color: white;
-    background-image: url("./images/samsunghero.webp");
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 10px 50px 300px;
+  position: relative;
+  z-index: 1;
+
+  color: white;
+  background-image: url("./images/samsunghero.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 10px 50px 300px;
 }
 
-.navbar {
-  display : flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.navleft {
-  display: flex;
-  align-items: center;
-  gap: 18px; 
-}
-
-.navright {
-  display: flex;
-  align-items: center;
-  gap: 18px; 
-}
-
-.navbar .col {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.headers {
-  text-align: left;
-  font-size: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.herotext{
-  font-family: Arial, Helvetica, sans-serif;
+.herotext {
   margin-top: 25%;
 }
 
@@ -53,7 +32,7 @@ body{
 }
 
 .herotext button {
-  background-color:transparent;
+  background-color: transparent;
   color: white;
 
   border: 2px solid white;
@@ -64,7 +43,7 @@ body{
   font-size: 10px;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   font-weight: 600;
-  line-height:1;
+  line-height: 1;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -73,23 +52,81 @@ body{
 .herotext button:hover {
   background-color: white;
   color: black;
-  transition: all 0.3s ease;
 }
 
+/* =========================
+   HEADER + NAV
+========================= */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 
-.leftie{
+  padding: 14px 48px;
+  box-sizing: border-box;
+
+  color: white;
+  background: transparent;
+
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Top tiny links row */
+.leftie {
   display: flex;
-  justify-content: right;
-  margin: 8px;
+  justify-content: flex-end;
+  margin: 8px 0;
   align-items: center;
   gap: 30px;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 10px;
 }
 
+/* Make links/icons visible by default */
+.headers,
+.leftie a,
+.navright i {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-.navright input{
-  background-color:transparent;
+/* Main navbar row */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navleft {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar .col {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.headers {
+  font-size: 10px;
+  user-select: none;
+}
+
+/* Right controls */
+.navright {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navright input {
+  background-color: transparent;
   color: white;
 
   border: 2px solid white;
@@ -98,15 +135,151 @@ body{
   padding: 8px 10px;
   font-size: 10px;
   font-weight: 600;
-  line-height:1;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1;
+
+  outline: none;
+  box-shadow: none;
+
+  transition: border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease;
 }
+
 .navright input::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.phonehero{
+/* Remove default focus ring */
+.navright input:focus,
+.navright input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* =========================
+   MEGA MENU (JS controls .open + .mega-open)
+========================= */
+.mega {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+}
+
+.mega.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mega-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 48px;
+
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Product grid */
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  gap: 18px;
+}
+
+.prod {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+
+  text-decoration: none;
+  color: black;
+
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.prod img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+}
+
+.prod span {
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.2;
+  opacity: 0.85;
+}
+
+
+
+/* Discover column */
+.mega-side {
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  padding-left: 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mega-side h4 {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px 0;
+  opacity: 0.7;
+}
+
+.mega-side a {
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.mega-side a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* When menu is open, header becomes white and text becomes black */
+.header.mega-open {
+  background: white;
+  color: black;
+}
+
+.header.mega-open .headers,
+.header.mega-open .leftie a,
+.header.mega-open .navright i {
+  color: black;
+}
+
+.header.mega-open .navright input {
+  color: black;
+  border-color: black;
+}
+
+.header.mega-open .navright input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+   PHONE HERO
+========================= */
+.phonehero {
   position: relative;
 
   background-image: url("./images/phone.avif");
@@ -119,61 +292,34 @@ body{
   padding: 100px 50px 500px;
 }
 
-.insidebut{
-  background-color:transparent;
-  color: rgb(0, 0, 0);
-
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 999px;
-
-  padding: 8px 16px;
-
-  font-size: 10px;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  font-weight: 600;
-  line-height:1;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.278);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.insidebut:hover {
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-  transition: all 0.3s ease;
-}
-
-.insides{
-  display : flex;
-  align-items: center;
-
-  top: 370px;     /* move up/down */
-  left: 45px;     /* move left/right */
-
+.insides {
   position: absolute;
+  top: 370px;
+  left: 45px;
 
   display: flex;
+  align-items: center;
   gap: 16px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-.insides a{
+.insides a {
   color: black;
   font-size: 12px;
+  text-decoration: none;
 }
 
-
-inside{
+/* NOTE: you had "inside{...}" which targets a tag <inside>.
+   You probably meant ".inside" (class). Fixing: */
+.inside {
   position: relative;
   color: black;
   text-decoration: none;
   font-size: 10px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .inside::after {
-  top: 24px;     /* move up/down */
-  left: 45px;     /* move left/right */
   content: "";
   position: absolute;
   left: 0;
@@ -187,29 +333,53 @@ inside{
 }
 
 .inside:hover::after {
-  width: 47%;
+  width: 100%;
 }
 
-/*//////////////////////////////////////////////////////*/
+.insidebut {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
 
-.bar{
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 999px;
+
+  padding: 8px 16px;
+
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.278);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.insidebut:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+/* =========================
+   PRODUCT CARDS ROW
+========================= */
+.bar {
   display: flex;
-  align-items: top;
   justify-content: center;
   gap: 10px;
+
   height: 300px;
   margin-bottom: 100px;
 }
 
-.cards{
+.cards {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: top;
-  font-family: Arial, Helvetica, sans-serif;
+
   font-size: 10px;
   background-color: whitesmoke;
+
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 0px;
@@ -217,7 +387,8 @@ inside{
   width: 230px;
   transition: transform 0.3s ease;
 }
-.txt{
+
+.txt {
   z-index: 1;
   margin-top: 20px;
 }
@@ -226,15 +397,15 @@ inside{
   z-index: 0;
   width: 180px;
   height: 180px;
-  background-color: transparent;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
-.cards:hover img{
-  transform: scale(1.40);
+
+.cards:hover img {
+  transform: scale(1.4);
 }
 
-.cards .btn{
+.cards .btn {
   z-index: 1;
   background-color: black;
   color: white;
@@ -246,14 +417,14 @@ inside{
 
   transform: translateY(40px);
 
-
   font-size: 10px;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   font-weight: 600;
-  line-height:1;
+  line-height: 1;
   cursor: pointer;
+
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.278);
   opacity: 0;
+
   transition: opacity 0.2s ease, transform 0.35s ease;
 }
 
@@ -262,23 +433,23 @@ inside{
   transform: translateY(0);
 }
 
-/*//////////////////////////////////////////////////////*/
-/* Layout */
+/* =========================
+   CAROUSEL
+========================= */
 .main {
   margin-bottom: 500px;
 }
 
 .carousel-container {
-  width: 1070px;          /* viewport width (your choice) */
+  width: 1070px;
   margin-left: 20px;
-  overflow: hidden;       /* hide extra cards */
+  overflow: hidden;
 }
 
 .carousel {
   margin-bottom: 20px;
 }
 
-/* Track (the moving row) */
 .cardsa {
   display: flex;
   gap: 20px;
@@ -287,34 +458,31 @@ inside{
   will-change: transform;
 }
 
-/* Card */
 .card {
-  /* border: 2px solid #000; */
-  flex: 0 0 auto;         /* prevents shrinking */
+  flex: 0 0 auto;
   overflow: hidden;
 }
 
-/* Card contents */
-.image{
+.image {
   width: 270px;
   height: 270px;
   overflow: hidden;
-    background-color: rgb(246, 246, 246);
+  background-color: rgb(246, 246, 246);
   border-radius: 5px;
 }
+
 .cardsa img {
   width: 200px;
   height: 200px;
 
   border-radius: 5px;
-  overflow: hidden;
-  transition: transform 0.3s ease, padding 0.3s ease, overflow 0.3s ease;
+  transition: transform 0.3s ease;
 }
+
 .cardsa img:hover {
-  overflow: hidden;
   transform: scale(1.1);
-  transition: transform 0.3s ease, padding 0.3s ease, overflow 0.3s ease;
 }
+
 .cardsa .image {
   display: flex;
   align-items: center;
@@ -323,10 +491,9 @@ inside{
 
 .cardsa .text {
   margin: 5px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Buttons */
+/* Carousel buttons */
 .buttons {
   display: flex;
   justify-content: center;
@@ -346,9 +513,8 @@ inside{
   color: aliceblue;
 }
 
-
-/* Bar */
-.bard{
+/* Progress bar */
+.bard {
   background-color: rgb(218, 218, 218);
   height: 5px;
   width: 500px;
@@ -357,7 +523,7 @@ inside{
   overflow: hidden;
 }
 
-.mybar{
+.mybar {
   background-color: black;
   height: 5px;
   width: 0px;
