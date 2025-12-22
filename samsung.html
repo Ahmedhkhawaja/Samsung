@@ -1,49 +1,55 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Page Title</title>
-    <link rel="stylesheet" href="samsung.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samsung Clone</title>
+
+  <link rel="stylesheet" href="samsung.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <div class = "header">
+  <div class="header">
     <div class="leftie">
-      <a>Support</a>
-      <a>For Business</a>
+      <a href="#">Support</a>
+      <a href="#">For Business</a>
     </div>
-    
+
     <div class="navbar">
       <div class="navleft">
         <img height="20"
           src="https://www.wearepriority.com/wp-content/uploads/2019/02/samsung-logo-white.png"
           alt="Samsung logo">
+
         <div class="col">
-          <a class="headers">Shop</a>
-          <a class="headers">Mobile</a>
-          <a class="headers">TV & AV</a>
-          <a class="headers">Appliances</a>
-          <a class="headers">Monitors</a>
-          <a class="headers">Wearables</a>
+          <a class="headers" href="#">Shop</a>
+          <a class="headers" href="#">Mobile</a>
+          <a class="headers" href="#">TV &amp; AV</a>
+          <a class="headers" href="#">Appliances</a>
+          <a class="headers" href="#">Monitors</a>
+          <a class="headers" href="#">Wearables</a>
         </div>
       </div>
 
       <div class="navright">
         <input type="text" placeholder="Search..">
-        <i class="fa fa-shopping-cart"></i>
-        <i class="fa fa-user"></i>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
       </div>
     </div>
+
+    <!-- Desktop mega -->
     <div class="mega" id="mega">
       <div class="mega-inner">
         <div class="mega-grid">
-          <a class="prod" href="#"><img src="/images/p1.webp"><span>Galaxy S25 Ultra</span></a>
-          <a class="prod" href="#"><img src="/images/p1.webp"><span>Galaxy S25</span></a>
-          <a class="prod" href="#"><img src="/images/p1.webp"><span>Galaxy S25 FE</span></a>
-          <a class="prod" href="#"><img src="/images/p1.webp"><span>Galaxy A56</span></a>
-          <a class="prod" href="#"><img src="/images/p1.webp"><span>Galaxy Buds3</span></a>
-          <a class="prod" href="#"><img src="/images/p1.webp"><span>QLED Q8F 4K TV</span></a>
+          <a class="prod" href="#"><img src="/images/p1.webp" alt=""><span>Galaxy S25 Ultra</span></a>
+          <a class="prod" href="#"><img src="/images/p1.webp" alt=""><span>Galaxy S25</span></a>
+          <a class="prod" href="#"><img src="/images/p1.webp" alt=""><span>Galaxy S25 FE</span></a>
+          <a class="prod" href="#"><img src="/images/p1.webp" alt=""><span>Galaxy A56</span></a>
+          <a class="prod" href="#"><img src="/images/p1.webp" alt=""><span>Galaxy Buds3</span></a>
+          <a class="prod" href="#"><img src="/images/p1.webp" alt=""><span>QLED Q8F 4K TV</span></a>
         </div>
 
         <aside class="mega-side">
@@ -60,42 +66,47 @@
     </div>
   </div>
 
+  <!-- Mobile drawer -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <aside class="drawer-panel" aria-label="Mobile menu">
+      <div class="drawer-top">
+        <input class="drawer-search" type="text" placeholder="Search.." />
+        <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="drawer-links">
+        <a href="#">Shop</a>
+        <a href="#">Mobile</a>
+        <a href="#">TV &amp; AV</a>
+        <a href="#">Appliances</a>
+        <a href="#">Monitors</a>
+        <a href="#">Wearables</a>
+      </div>
+
+      <div class="drawer-products">
+        <a class="prod" href="#"><img src="/images/p1.webp" alt=""><span>Galaxy S25 Ultra</span></a>
+        <a class="prod" href="#"><img src="/images/p1.webp" alt=""><span>Galaxy S25</span></a>
+        <a class="prod" href="#"><img src="/images/p1.webp" alt=""><span>Galaxy S25 FE</span></a>
+        <a class="prod" href="#"><img src="/images/p1.webp" alt=""><span>Galaxy A56</span></a>
+        <a class="prod" href="#"><img src="/images/p1.webp" alt=""><span>Galaxy Buds3</span></a>
+        <a class="prod" href="#"><img src="/images/p1.webp" alt=""><span>QLED Q8F 4K TV</span></a>
+      </div>
+
+      <div class="drawer-bottom">
+        <a href="#">Support</a>
+        <a href="#">For Business</a>
+      </div>
+    </aside>
+  </div>
+
   <div class="hero">
-  <div class="herotext">
+    <div class="herotext">
       <h1>Unforgettable</h1>
       <h1>gifting</h1>
       <h3>Visit the gift guide.</h3>
       <button>Learn more</button>
-    </div>
-  </div>
-
-  <div class="phonehero">
-    <div class="insides">
-      <a class="inside">Learn more</a>
-      <button class="insidebut">Buy</button>
-    </div>
-  </div>
-    
-  <div class="bar">
-    <div class="cards">
-      <div class="txt"><h1>Galaxy S25 Ultra</h1></div>
-      <img height="250" src="/images/p1.webp">
-      <button class="btn">Buy Now</button>
-    </div>
-    <div class="cards">
-      <div class="txt"><h1>Galaxy S25 FE</h1></div>
-      <img height="250" src="/images/p2.webp">
-      <button class="btn">Buy Now</button>
-    </div>
-    <div class="cards">
-      <div class="txt"><h1>Galaxy Tab S9 FE</h1></div>
-      <img height="250" src="/images/p3.avif">
-      <button class="btn">Buy Now</button>
-    </div>
-    <div class="cards">
-      <div class="txt"><h1>Galaxy Watch 7</h1></div>
-      <img height="250" src="/images/p4.webp">
-      <button class="btn">Buy Now</button>  
     </div>
   </div>
 
@@ -107,197 +118,14 @@
     </div>
 
     <div class="buttons">
-      <div class="bard">
-        <div class="mybar"></div>
-      </div>
-      <button class="Previous"> &#8592; </button>
-      <button class=  "Next"  > &#8594; </button>
+      <div class="bard"><div class="mybar"></div></div>
+      <button class="Previous">&#8592;</button>
+      <button class="Next">&#8594;</button>
     </div>
   </div>
-  
+
+  <!-- Scripts MUST be inside body before closing body -->
   <script src="cards.js"></script>
   <script src="samsung.js"></script>
 </body>
 </html>
-
-
-
-  <!-- 
-
-  <div>
-    <h1>Be together</h1>
-    <h1>watch together</h1>
-    <h3>Samsung Vision AI</h3>
-    <a>Learn more</a>
-    <button>Buy</button>
-  <div>
-  <div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>
-  <div>
-    <h1>Free your time</h1>
-    <h3>Bespoke AI</h3>
-    <button>Learn more</button>
-  <div>
-  <div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>
-  <div>
-    <h1>Recommended for you</h1>
-    <div>
-      <div>
-        <h3>Galaxy S25 Ultra</h3>
-        <h4>Rs. 349,999.00</h4>
-        <h5>Save Rs. 55,000.00 (Was Rs. 404,999.00)</h5>
-      </div>
-      <div>
-        <h3>Galaxy Buds</h3>
-        <h4>Rs. 56,699.00</h4>
-      </div>
-      <div>
-        <h3>43 Inch Crystal UHD DU7000 4K Smart TV</h3>
-        <h4>Rs. 116,999.00</h4>
-      </div>
-      <div>
-        <h3>WW90DG5U34AEGU with Eco Bubble™ and DIT</h3>
-        <h4>Rs. 225,000.00</h4>
-        <h5>Save ₨. 34,999.00 (Was ₨. 259,999.00)</h5>
-      </div>
-      <div>
-        <h3>34" Curved Gaming Monitor With 165Hz</h3>
-        <h4>Rs. 127,000.00</h4>
-        <h5>Save ₨. 12,000.00 (Was ₨. 139,000.00)</h5>
-      </div>
-      <div>
-        <h3>AR9500T Wall-mount AC with Fast Cooling</h3>
-        <h4>Rs. 289,999.00</h4>
-        <h5>Save ₨. 53,000.00 (Was ₨. 342,999.00)</h5>
-      </div>
-      <div>
-        <h3>Galaxy A07</h3>
-        <h4>Rs. 27,500.00</h4>
-      </div>
-      <div>
-        <h3>Galaxy Tab S9 FE 5G</h3>
-        <h4>Rs. 200,000.00</h4>
-      </div>
-    </div>
-  </div>
-  <div>
-    <h1>Explore the Stories</h1>
-    <div>Why Samsung Smart TV</div>
-    <div>Smart Things</div>
-    <div>Galaxy AI</div>
-    <div>Buy Direct Get More</div>
-    <div>Samsung Health</div>
-  </div>
-  <div>
-    <div>
-      <h1>Shop</h1> 
-      <div>
-        <a href="">Shop Home</a>
-        <a href="">Buy Direct Get More</a>
-        <a href="">Smartphone</a>
-        <a href="">SmartThings</a>
-        <a href="">Discover AI</a>
-        <a href="">New and featured</a>
-        <a href="">Wearables</a>
-        <a href="">Tablets</a>
-        <a href="">Back to School</a>
-        <a href="">Explore</a>
-      </div>
-    </div>
-    <div>
-      <h1>Product</h1>
-      <div>
-        <a href="">Galaxy Smartphone</a>
-        <a href="">Galaxy Tab</a>
-        <a href="">Galaxy Watch</a>
-        <a href="">Galaxy Buds</a>
-        <a href="">TVs</a>
-        <a href="">Projectors</a>
-        <a href="">Refrigerators</a>
-        <a href="">Laundry</a>
-        <a href="">Monitors</a>
-      </div>
-    </div>
-    <div>
-      <h1>Support</h1>
-      <div>
-        <a href="">Support Home</a>
-        <a href="">Manual & Software</a>
-        <a href="">Search Support</a>
-        <a href="">Shop FAQ</a>
-        <a href="">Warranty Information</a>
-        <a href="">Service Center</a>
-        <a href="">Book a repair</a>
-        <a href="">Track my repair</a>
-        <a href="">Repair Cost</a>
-        <a href="">Chat</a>
-        <a href="">Call</a>
-        <a href="">Sign Language Support</a>
-
-      </div>
-    </div>
-    <div>
-      <h1>Account</h1>
-      <div>
-        <a href="">Orders</a>
-        <a href="">My Page</a>
-        <a href="">My Products</a>
-        <a href="">Vouchers</a>
-      </div>
-    </div>
-    <div>
-      <div>
-        <h1>Sustainability</h1>
-        <div>
-          <a href="">Environment</a>
-          <a href="">Security & Policy</a>
-          <a href="">Accessibility</a>
-          <a href="">Diversity Equity Inclusion</a>
-          <a href=""></a>
-        </div>
-      </div>
-      <div>
-        <h1>About Us</h1>
-        <div> 
-          <a href="">Company Info</a>
-          <a href="">Business Area</a>
-          <a href="">Brand Identity</a>
-          <a href="">Careers</a>
-          <a href="">Investor Relations</a>
-          <a href="">Newsroom</a>
-          <a href="">Ethics</a>
-          <a href="">Samsung Design</a>
-          <a href="">Samsung Innovation Campus</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-  <div>Copyright© 1995-2025 Samsung. All rights reserved.</div>
-  <div>
-    <a href="">Pakistan/English</a>
-    <a href="">Privacy</a>
-    <a href="">Legal</a>
-    <a href="">Sitemap</a>
-    <a href="">Terms and Conditions of Sale</a>
-    <a href="">Stay in the Loop?</a>
-    <i class="fa fa-facebook"></i>
-    <i class="fa fa-twitter"></i>
-    <i class="fa fa-youtube"></i>
-    <i class="fa fa-instagram"></i>
-    <i class="fa fa-whatsapp"></i>
-    
-
-  </div> -->
-  <!-- </div>
-</body> -->
-

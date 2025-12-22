@@ -529,3 +529,210 @@ body {
   width: 0px;
   transition: width 300ms ease;
 }
+
+
+
+
+/* Hide hamburger on desktop */
+.menuBtn { display: none; }
+
+@media (max-width: 768px) {
+  /* show hamburger */
+
+  .menuBtn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    border: 2px solid rgba(255,255,255,0.9);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Drawer overlay */
+  .drawer{
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    pointer-events: none;
+  }
+
+  .drawer.open{ pointer-events: auto; }
+
+  .drawer-backdrop{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    opacity: 0;
+    transition: opacity 180ms ease;
+  }
+
+  .drawer.open .drawer-backdrop{ opacity: 1; }
+
+  /* Panel */
+  .drawer-panel{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(380px, 90vw);
+    background: white;
+
+    transform: translateX(100%);
+    transition: transform 220ms ease;
+    overflow: auto;
+    padding: 16px;
+  }
+
+  .drawer.open .drawer-panel{ transform: translateX(0); }
+
+  .drawer-top{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .drawer-search{
+    flex: 1;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 999px;
+    padding: 10px 12px;
+    outline: none;
+  }
+
+  .drawer-close{
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .drawer-links{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 18px 0;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .drawer-links a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .drawer-products{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(90px, 1fr));
+    gap: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  /* reuse your .prod styles if you want — these keep it compact */
+  .drawer-products .prod{
+    padding: 6px;
+  }
+
+  .drawer-bottom{
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .drawer-bottom a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+
+/* =========================
+   FORCE: Drawer only exists on mobile
+========================= */
+
+/* Desktop: kill drawer completely */
+.drawer { 
+  display: none; 
+}
+.menuBtn {
+  display: none;
+}
+
+/* Mobile: enable drawer + hamburger */
+@media (max-width: 768px) {
+  .drawer { 
+    display: block; 
+  }
+  .menuBtn { 
+    display: inline-flex; 
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  /* Hide the top tiny row */
+  .leftie{
+    display: none;
+  }
+
+  /* Make header tighter */
+  .header{
+    padding: 12px 14px;
+  }
+
+  /* Only show logo + right controls */
+  .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  /* Hide the desktop nav links row */
+  .navbar .col{
+    display: none !important;
+  }
+
+  /* Keep logo on left */
+  .navleft{
+    gap: 10px;
+  }
+
+  /* Right side: hamburger + search + icons */
+  .navright{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Make search smaller so it fits */
+  .navright input{
+    width: 160px;            /* adjust */
+    padding: 8px 10px;
+  }
+
+  /* Make icons a bit smaller if needed */
+  .navright i{
+    font-size: 18px;
+  }
+
+  /* Show hamburger on mobile */
+  .menuBtn{
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
