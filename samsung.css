@@ -267,6 +267,9 @@ body {
   color: black;
 }
 
+.header.mega-open .imagelogo {
+  filter:invert(100%);  
+}
 .header.mega-open .navright input {
   color: black;
   border-color: black;

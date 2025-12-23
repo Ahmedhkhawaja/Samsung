@@ -80,7 +80,6 @@ renderCarousel();
 const header = document.querySelector(".header");
 const mega = document.getElementById("mega");
 const triggers = document.querySelectorAll(".headers");
-
 let closeTimer = null;
 
 function isDesktop() {
